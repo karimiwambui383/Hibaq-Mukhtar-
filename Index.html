@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Kareem 🌙</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Center container */
+.container {
+  position: relative;
+  text-align: center;
+}
+
+/* Envelope */
+.envelope {
+  width: 300px;
+  height: 200px;
+  background: #b8860b;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  cursor: pointer;
+  transition: transform 1s ease;
+}
+
+/* Flap */
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: gold;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+
+/* Open animation */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* Card inside */
+.card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 260px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  transition: transform 1s ease;
+  box-shadow: 0 0 20px gold;
+}
+
+.envelope.open .card {
+  transform: translateX(-50%) translateY(-150px) scale(1);
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: gold;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Tap Button */
+.tap-btn {
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: gold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tap-btn:hover {
+  background: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="card">
+      <h1>Ramadan Kareem 🌙</h1>
+      <h2>Dear Hibaq Mukhtar</h2>
+      <p>
+        May this Ramadan bring you peace,
+        answered duas, and endless light ✨  
+        May your heart feel calm,
+        your prayers feel powerful,
+        and your soul feel deeply loved 🤍
+      </p>
+    </div>
+  </div>
+  <button class="tap-btn" onclick="openEnvelope()">Tap Me ✨</button>
+</div>
+
+<script>
+function openEnvelope() {
+  document.getElementById("envelope").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
